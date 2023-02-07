@@ -6,10 +6,8 @@ import { useState } from "react";
 
 const Confirm = () => {
 
-    const [cep] = useState(store.getState().order.cep)
     const [adress] = useState(store.getState().order.adress)
     const [number] = useState(store.getState().order.number)
-    const [complement] = useState(store.getState().order.complement)
     const [city] = useState(store.getState().order.city)
     const [state] = useState(store.getState().order.state)
     const [neighborhood] = useState(store.getState().order.neighborhood)
