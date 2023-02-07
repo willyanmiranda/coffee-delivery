@@ -1,0 +1,195 @@
+#cart {
+    margin-left: 148px;
+    margin-right: 148px;
+}
+
+.cart-form-container {
+    background-color: $base-card;
+    width: 640px;
+    height: 372px;
+    padding: 40px;
+}
+
+.cart-text-title {
+    @include regular-M;
+    color: $base-subtitle;
+}
+
+.cart-text-subtitle {
+    @include regular-S;
+    color: $base-text;
+}
+
+.cart-nav {
+    height: 44px;
+}
+
+.cart-title {
+    @include title-XS;
+}
+
+#input {
+    background-color: $base-input;
+    @include regular-S;
+    height: 42px;
+    
+    &::placeholder {
+        color: $base-label;
+    }
+}
+
+#input-span {
+    font-style: italic;
+    font-size: 12px;
+    color: $base-label;
+}
+
+.title-payment {
+    @include regular-M;
+    color: $base-subtitle;
+}
+
+.subtitle-payment {
+    @include regular-S;
+    color: $base-text;
+}
+
+.option-text {
+    @include button-S;
+    color: $base-text;
+}
+
+.cart-payment {
+    background-color: $base-card;
+    padding: 40px;
+    height: 207px;
+}
+
+.payment-options-container {
+    margin-top: 32px;
+}
+
+.payment-option {
+    background-color: $base-button;
+    width: 179px;
+    height: 51px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $base-hover;
+        
+    }
+}
+
+.cart-resume-card {
+    width: 472px;
+    height: 498px;
+    padding: 40px;
+    background-color: $base-card;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 6px;
+    
+}
+
+.card-resume-title {
+    @include regular-M;
+    color: $base-subtitle;
+}
+
+.remove-button {
+    @include button-S;
+    width: 91px;
+    height: 32px;
+    background-color: $base-button;
+    color: $base-text;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $base-hover;
+    }
+    
+}
+
+.resume-price {
+    @include bold-M;
+    color: $base-text;
+}
+
+.resume-img {
+    width: 64px;
+    height: 64px;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, $base-label, transparent);
+    margin-top: 24px;
+    margin-bottom: 24px;  
+}
+
+.resume-itens {
+    @include regular-S;
+    color: $base-text;
+}
+
+.resume-itens-price {
+    @include regular-M;
+    color: $base-text;
+}
+
+.resume-total {
+    @include bold-L;
+    color: $base-subtitle;
+}
+
+.resume-total-price {
+    @include bold-L;
+    color: $base-subtitle;
+}
+
+.resume-button-container {
+    background-color: $yellow;
+    height: 46px;
+    color: $white;
+
+    &:hover{
+        background-color: $yellow-dark;
+        cursor: pointer;
+
+        button {
+            background-color: $yellow-dark;
+        }
+    }
+
+}
+
+.overflow-container {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#payment-selected {
+    border: 2px;
+    border-color: $purple;
+    border-style: solid;
+    background-color: $base-hover;
+}
+
+.coffee-quantity {
+    width: 72px;
+    height: 32px;
+    background-color: $base-button;
+}
+
+.coffee-quantity-text {
+    @include button-S;
+    color: $base-subtitle;
+}
+
+.cart-message {
+    @include title-L;
+    margin-bottom: 100px;
+}

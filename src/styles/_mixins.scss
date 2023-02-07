@@ -1,0 +1,102 @@
+///////////TITLE
+@mixin title-XL {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 130%;
+};
+
+@mixin title-L {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 130%;
+};
+
+@mixin title-M {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 130%;
+};
+
+@mixin title-S {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+};
+
+@mixin title-XS {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+////////////////////// TEXT
+
+@mixin regular-L {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+};
+
+@mixin bold-L {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+};
+
+@mixin regular-M {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+};
+
+@mixin bold-M {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+};
+
+@mixin regular-S {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+};
+
+@mixin bold-S {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 130%;
+};
+
+///////////// COMPONENTS
+
+@mixin tag {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 130%;
+};
+
+@mixin button-G {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+};
+
+@mixin button-S {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 160%;
+};

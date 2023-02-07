@@ -1,0 +1,68 @@
+.confirm-container {
+    margin-left: 148px;
+    margin-right: 148px;
+    margin-top: 48px;
+}
+
+.confirm-card {
+    width: 526px;
+    height: 270px;
+    padding: 40px;
+    border-radius: 6px 36px 6px 36px;
+    position: relative;
+    background: $background;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        z-index: -1;
+        border-radius: 7px 37px 7px 37px;
+        background: linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
+    }
+}
+
+.confirm-img {
+    width: 492px;
+    height: 293px;
+}
+
+
+.confirm-title {
+    @include title-L;
+    color: $yellow-dark;
+}
+
+.confirm-subtitle {
+    @include regular-L;
+    color: $base-subtitle;
+}
+
+.adress-title {
+    @include regular-M;
+    color: $base-text;
+}
+
+.adress {
+    @include bold-M;
+    color: $base-text;
+}
+
+.city {
+    @extend .adress-title;
+}
+
+.time-title {
+    @extend .adress-title;
+}
+
+.time {
+    @extend .adress;
+}
+
+.payment-title {
+    @extend .adress-title;
+}
+
+.payment {
+    @extend .adress;
+}

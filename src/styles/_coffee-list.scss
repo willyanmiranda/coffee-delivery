@@ -1,0 +1,14 @@
+#coffee-container {
+    margin-top: 150px;
+    margin-left: 148px;
+    margin-right: 148px;
+}
+
+.coffee-list {
+    display: grid;
+    grid-template-columns: repeat(4, 314px);
+}
+
+.list-title {
+    @include title-L;
+}

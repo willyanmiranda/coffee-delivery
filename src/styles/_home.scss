@@ -1,0 +1,40 @@
+#home {
+    margin-left: 148px;
+    margin-right: 148px;
+    margin-top: 100px
+}
+
+.home-title {
+    @include title-XL;
+    color: $base-title;
+}
+
+.home-subtitle {
+    @include regular-L;
+    color: $base-subtitle;
+}
+
+.text-item {
+    @include regular-M;
+    color: $base-text;
+    margin-left: 10px;
+}
+
+.container-subtitle {
+    width: 588px;
+}
+
+.home-img {
+    width: 476px;
+    height: 360px;
+}
+
+.circle {
+    width: 32px;
+    height: 32px;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+}

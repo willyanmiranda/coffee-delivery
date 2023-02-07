@@ -1,0 +1,33 @@
+.nav-cart {
+    width: 38px;
+    height: 38px;
+    background-color: $yellow-light;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $yellow;
+        cursor: pointer;
+
+        svg {
+            transition: 0.3s;
+            fill: $yellow-light;
+        }
+    }
+}
+
+.card-cart {
+    width: 38px;
+    height: 38px;
+    background-color: $purple-dark;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $purple;
+        cursor: pointer;
+
+        svg {
+            transition: 0.3s;
+            fill: $white;
+        }
+    }
+}

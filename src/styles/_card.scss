@@ -1,0 +1,71 @@
+.card {
+    width: 256px;
+    height: 310px;
+    background-color: $base-card;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 6px;
+}
+
+.card-text {
+    @include tag;
+}
+
+.card-title {
+    @include title-S;
+    color: $base-subtitle;
+}
+
+.card-subtitle {
+    @include regular-S;
+    color: $base-label;
+}
+
+.real {
+    @include regular-S;
+    color: $base-text;
+}
+
+.price {
+    @include title-M;
+    color: $base-text;
+}
+
+.card-counter-value {
+    @include regular-M;
+}
+
+.card-footer {
+    background-color: $base-card;
+}
+
+.card-counter {
+    width: 72px;
+    height: 38px;
+    background-color: $base-button;
+}
+
+.card-text {
+    color: $yellow-dark;
+    background-color: $yellow-light;
+}
+
+.coffee-img {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    position: absolute;
+}
+
+.alert {
+    position: fixed;
+    left: 2.5rem;
+    bottom: 3rem;
+    background-color: $purple;
+    color: $white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.4rem;
+    z-index: 10;
+    transition: .4s;
+}
