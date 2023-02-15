@@ -13,33 +13,22 @@ const orderSlice = createSlice({
         payment: ''
     },
     reducers: {
-        addCep: (state, action) => {
-            state.cep = action.payload;
-        },
-        addAdress: (state, action) => {
-            state.adress = action.payload;
-        },
-        addNumber: (state, action) => {
-            state.number = action.payload;
-        },
-        addComplement: (state, action) => {
-            state.complement = action.payload;
-        },
-        addNeighborhood: (state, action) => {
-            state.neighborhood = action.payload;
-        },
-        addCity: (state, action) => {
-            state.city = action.payload;
-        },
-        addState: (state, action) => {
-            state.state = action.payload;
-        },
-        addPayment: (state, action) => {
-            state.payment = action.payload;
+        addOrder: (state, action) => {
+            return {
+                ...state,
+                cep: action.payload.cep,
+                adress: action.payload.adress,
+                number: action.payload.number,
+                complement: action.payload.complement,
+                neighborhood: action.payload.neighborhood,
+                city: action.payload.city,
+                state: action.payload.state,
+                payment: action.payload.payment
+            }
         }
     }
 
 })
 
-export const { addCep, addAdress, addNumber, addComplement, addCity, addState, addNeighborhood, addPayment } = orderSlice.actions;
+export const { addOrder} = orderSlice.actions;
 export default orderSlice.reducer;

@@ -1,48 +1,31 @@
 import { Formik, Field, Form } from 'formik';
 import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank } from "phosphor-react";
-import { useState } from 'react';
-import Coffee from '../coffee';
+import { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCep, addAdress, addNumber, addComplement, addCity, addState, addNeighborhood, addPayment } from '../../redux/slices/orderSlice';
-import { removeCoffee } from '../../redux/slices/cartSlice';
+import { addOrder } from '../../redux/slices/orderSlice';
 import { useNavigate } from 'react-router-dom';
-import { store } from '../../store';
-import ResumePrice from '../resume-price';
+import { adressContext } from '../../context/adressContext';
 
 const CartForm = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { modifyAdress } = useContext(adressContext)
 
     const [paymentMethod, setPaymentMethod] = useState("Cartão de crédito");
-    const [coffeesList, setCoffeeList] = useState(store.getState().cart.coffees);
-    const [price, setPrice] = useState( coffeesList.length >= 1 ? coffeesList.map(item => item.price * item.quantity).reduce((acc, current) => acc += current) : 0);
-    console.log(price)
-
 
     const onSubmit = (values, actions) => {
-        dispatch(addCep(values.cep));
-        dispatch(addAdress(values.adress));
-        dispatch(addNumber(values.number));
-        dispatch(addComplement(values.complement));
-        dispatch(addCity(values.city));
-        dispatch(addState(values.state));
-        dispatch(addNeighborhood(values.neighborhood));
-        dispatch(addPayment(paymentMethod)); 
+        modifyAdress({
+            city: values.city,
+            uf: values.state
+        })
+        values.payment = paymentMethod;
+        dispatch(addOrder(values)); 
         navigate("/confirm")
-    }
-
-    const remove = (id) => {
-        let coffeesToAdd = coffeesList.filter(item => item.id !== id);
-        setCoffeeList(coffeesToAdd);
-        dispatch(removeCoffee(id));
-        let coffee = coffeesList.filter(item => item.id === id);
-        setPrice(price - coffee[0].price);
     }
     
     return (
-        <div className="container mt-4 pt-1" id='cart'>
-            <div className='row'>
+            
                 <div className='col'>
                     <span className="cart-title">Complete seu pedido</span>
                     <div className="container rounded-3 mt-3 mb-0  me-0 ms-0 cart-form-container">
@@ -128,32 +111,6 @@ const CartForm = () => {
                     </div>
                     <div>....</div>
                 </div>
-                <div className='col'>
-                    <span className="cart-title">Cafés selecionados</span>
-                    <div className='container cart-resume-card d-flex flex-column justify-content-end mt-3 mb-0 me-0 ms-0'> 
-
-                        {price > 0 ? 
-                        <div className='overflow-container mb-2'>
-                            {coffeesList.map(item => {
-                                return(
-                                    <Coffee img={item.img} name={item.name} price={item.price} quantity={item.quantity} id={item.id} remove={remove} />
-                                )
-                            })}
-                        </div> : <div className='cart-message'>Carrinho vazio</div>}
-
-                        <div className='row d-flex align-items-center justify-content-center flex-column'>
-                            <div className='col'>
-                                <ResumePrice price={price} />
-                            </div>
-                            <div className='col d-flex align-items-center justify-content-center'>
-                                <button type='submit' form='my-form' className='w-100 resume-button-container mt-4 rounded-2 border-0'>Confirmar pedido</button>  
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     )
 }
 

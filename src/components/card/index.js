@@ -2,12 +2,18 @@ import { useState } from "react";
 import Cart from "../utils/cart";
 import Counter from "../utils/counter";
 import { useDispatch } from "react-redux";
-import { addCoffee, addQuantity } from "../../redux/slices/cartSlice";
+import { addCoffee } from "../../redux/slices/cartSlice";
+import data from "../../data/data";
+import { countContext } from "../../context/countContext";
+import { useContext } from "react";
 
 const Card = (props) => {
 
     const [counter, setCounter] = useState(1);
+
     const dispatch = useDispatch();
+
+    const { incrementCount } = useContext(countContext);
 
     const somar = () => {
         let value = counter;
@@ -24,9 +30,11 @@ const Card = (props) => {
     }
 
     const addCoffeeToCart = (id) => {
-        dispatch(addQuantity(counter))
-        dispatch(addCoffee(id))
+        let coffeesToAdd = data.filter(item => item.id === id);
+        coffeesToAdd[0].quantity = counter;
+        dispatch(addCoffee(coffeesToAdd[0]))
         changeAlert()
+        incrementCount()
     }
 
     const [alert, setAlert] = useState(false);

@@ -1,8 +1,14 @@
 import Rotas from "./routes/routes";
+import { CountProvider } from "./context/countContext";
+import { AdressProvider } from "./context/adressContext";
 
 function App() {
   return (
-    <Rotas />
+    <CountProvider>
+      <AdressProvider>
+        <Rotas />
+      </AdressProvider>
+    </CountProvider>
   );
 }
 
